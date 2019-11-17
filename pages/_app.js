@@ -1,6 +1,6 @@
 import App from "next/app";
-
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+
 import DefaultLayout from "../layouts/DefaultLayout";
 import theme from "../utils/theme";
 
