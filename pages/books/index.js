@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { useQuery } from "react-apollo";
+import ALL_BOOKS_Q from "../../api/query/ALL_BOOKS";
 
 const Books = () => {
+  const { data, loading, error } = useQuery(ALL_BOOKS_Q);
+  if (loading) return <div>Loading ..</div>;
+  if (error) console.log({ error });
+
+  console.log({ data });
   return (
     <div>
       <h1>Dynamic Links</h1>
