@@ -1,8 +1,10 @@
 import App from "next/app";
-
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import DefaultLayout from "../layouts/DefaultLayout";
+import { ApolloProvider } from "react-apollo";
+
+import withApollo from "../lib/with-apollo-client";
 import theme from "../utils/theme";
+import DefaultLayout from "../layouts/DefaultLayout";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -117,18 +119,20 @@ class AppWrapper extends App {
     return { pageProps };
   }
   render() {
-    const { Component, pageProps } = this.props;
+    const { apollo, Component, pageProps } = this.props;
     const Layout = Component.Layout || DefaultLayout;
 
     return (
-      <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-          <GlobalStyle />
-        </Layout>
-      </ThemeProvider>
+      <ApolloProvider client={apollo}>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+            <GlobalStyle />
+          </Layout>
+        </ThemeProvider>
+      </ApolloProvider>
     );
   }
 }
 
-export default AppWrapper;
+export default withApollo(AppWrapper);
