@@ -1,7 +1,7 @@
 export const About = () => {
   return (
     <div>
-      <h1>About iThemed NextJS</h1>
+      <h1>iGraphQL NextJS</h1>
       <p>
         Next.js is a framework that makes it easy to create Universal web apps
         in React.
@@ -22,7 +22,7 @@ export const About = () => {
           1. Clone the the{" "}
           <a href="https://github.com/ijsto/igraphql-nextjs">starter repo</a>
           <p>
-            <code>git clone git@github.com:ijsto/igraphql-nextjs.git</code>
+            <code>git clone https://github.com/ijsto/igraphql-nextjs.git</code>
           </p>
         </li>
         <li>
