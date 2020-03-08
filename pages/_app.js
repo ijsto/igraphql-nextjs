@@ -9,13 +9,16 @@ import DefaultLayout from "../layouts/DefaultLayout";
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
-    transition: 0.3s all;
+  }
+  a {
     color: ${({ theme }) => theme.dkPrimaryCol};
+    transition: 0.3s all;
   }
   a:hover {
     color: orange
   }
   body {
+    color: ${({ theme }) => theme.dkPrimaryCol};
     padding: 0;
     margin: 0;
     font-family: 'Space Mono', sans-serif;
