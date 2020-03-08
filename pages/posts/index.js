@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useQuery } from "react-apollo";
-import ALL_POSTS_Q from "../../api/query/ALL_BOOKS";
+import ALL_POSTS_Q from "../../api/query/ALL_POSTS_Q";
 
 const Posts = () => {
   const { data, loading, error } = useQuery(ALL_POSTS_Q);
